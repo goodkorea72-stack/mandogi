@@ -56,3 +56,4 @@ React 19 + Vite 7 + TypeScript 5.8 · PWA (manifest + service worker) · localSt
   - 🟡 `storage.ts` `getGoal`/`getStrideCm` try/catch 안전 처리 (시크릿 모드 대응)
   - 🟡 Simulator 보폭 슬라이더 max 100→120 (storage 허용 범위와 통일)
   - 검증: `npm run build` 성공 + vite preview로 `/mandogi/` 기준 7종 리소스 HTTP 200, manifest JSON/경로, sw precache 확인 완료
+- **2026-09-21** 커밋 `32dd626` + push → Actions 자동 배포 성공 (build 28s + deploy 8s) → 운영 URL 재검증: index/manifest/sw.js/아이콘 전부 200, `sw.js`가 새 캐시 버전(`mandogi-cache-03290d3639`)으로 서빙되어 기존 사용자 SW 갱신 트리거 확인.
