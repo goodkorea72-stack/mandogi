@@ -35,7 +35,7 @@
 ## 🛠 기술 스택
 
 - **React 19** + **TypeScript 5.8** + **Vite 7**
-- PWA: `manifest.webmanifest` + `sw.js` (offline-first 캐싱)
+- PWA: `manifest.webmanifest` + **빌드 시 자동 생성되는 `dist/sw.js`** (전체 assets 프리캐시 + stale-while-revalidate, 배포마다 캐시 버전 자동 갱신)
 - 상태 저장: `localStorage` (서버/DB 없음 — 완전 로컬, 프라이버시 보장)
 
 ## 📁 프로젝트 구조
@@ -56,8 +56,9 @@ src/
 └── main.tsx               # service worker 등록
 public/
 ├── manifest.webmanifest
-├── sw.js
 └── icons/                 # PWA 아이콘 (192/512/maskable/apple-touch)
+scripts/
+└── gen-sw.mjs             # 빌드 후 dist/sw.js 생성 (프리캐시 목록·캐시 버전 자동 산출)
 ```
 
 ## ⚙️ 걸음 감지 알고리즘

@@ -67,8 +67,12 @@ export function getHistory(days: number): HistoryItem[] {
 }
 
 export function getGoal(): number {
-  const v = Number(localStorage.getItem(KEY_GOAL))
-  return Number.isFinite(v) && v > 0 ? v : 10000
+  try {
+    const v = Number(localStorage.getItem(KEY_GOAL))
+    return Number.isFinite(v) && v > 0 ? v : 10000
+  } catch {
+    return 10000
+  }
 }
 
 export function setGoal(g: number) {
@@ -80,8 +84,12 @@ export function setGoal(g: number) {
 }
 
 export function getStrideCm(): number {
-  const v = Number(localStorage.getItem(KEY_STRIDE))
-  return Number.isFinite(v) && v >= 40 && v <= 120 ? v : 70
+  try {
+    const v = Number(localStorage.getItem(KEY_STRIDE))
+    return Number.isFinite(v) && v >= 40 && v <= 120 ? v : 70
+  } catch {
+    return 70
+  }
 }
 
 export function setStrideCm(s: number) {

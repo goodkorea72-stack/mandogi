@@ -66,13 +66,13 @@ export function Simulator({
         <input
           type="range"
           min={40}
-          max={100}
+          max={120}
           step={2}
           value={stride}
           onChange={(e) => onStrideChange(Number(e.target.value))}
           aria-label="보폭 설정"
         />
-        <div className="range-scale"><span>40</span><span>100</span></div>
+        <div className="range-scale"><span>40</span><span>120</span></div>
       </div>
 
       <p className="hint">
